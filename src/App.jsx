@@ -7,6 +7,7 @@ import About from "./Pages/About";
 import Project from "./Pages/Projects";
 import Skills from "./Pages/Skills";
 import Contact from "./Pages/Contact";
+import Errorpage from "./Pages/Errorpage";
 import MoveToTop from "./Components/MoveToTop";
 import Lottie from  "lottie-react";
 import nightsky from "./LottieFiles/night-sky.json";
@@ -56,6 +57,7 @@ function App() {
         <Route path="/project" element={<Project/>}/>
         <Route path="/skills" element={<Skills/>}/>
         <Route path="/contact" element={<Contact/>}/>
+        <Route path="*" element={<Errorpage/>}/>
       </Routes>
       
       <Footer/>

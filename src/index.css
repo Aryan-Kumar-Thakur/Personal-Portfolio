@@ -1053,3 +1053,49 @@ footer h4 {
     height: 110px;
   }
 }
+
+/* Error page */
+
+.error-page{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  margin-top: 100px;
+  /* background: rgba(0, 0, 0, 0.5); */
+  padding: 20px 80px;
+}
+
+.error-page img{
+  height: 60vh;
+  margin-top: -50px;
+}
+
+.errbtn{
+  width: 100px;
+  height: 50px;
+  border-radius: 30px;
+  color: #fff;
+  background-color: red;
+  margin-top: 30px;
+}
+
+@media screen and (max-width:710px) {
+  .error-page img{
+    height: 40vh;
+  }
+}
+@media screen and (max-width:490px) {
+  .error-page img{
+    height: 30vh;
+  }
+}
+@media screen and (max-width:360px) {
+  .error-page img{
+    height: 25vh;
+  }
+  .errbtn{
+    height: 40px;
+  }
+}
