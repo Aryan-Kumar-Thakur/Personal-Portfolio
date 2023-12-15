@@ -14,8 +14,8 @@ const  ProjectBox = ({projectPhoto, projectName}) => {
     WeatherVaniWebsite : "https://weathervani.onrender.com/",
 
     ProgrammingCommunityDesc:"Developed a fully responsive Front End of a WebApp for the Programming Community Socity of our college using ReactJS , deployed on github pages.",
-    ProgrammingCommunityGithub:"https://github.com/Aryan-Kumar-Thakur/Weather-Vani",
-    ProgrammingCommunityWebsite:"https://newsletter-signup-teal.vercel.app/",
+    ProgrammingCommunityGithub:"https://github.com/Aryan-Kumar-Thakur/Programming-Community-WebApp",
+    ProgrammingCommunityWebsite:"https://programming-community.vercel.app/",
     
     ServiceSiteDesc:"Developed a fully responsive Front End of a service App using ReactJS through which a person/organisation provide their services , deployed on github pages.",
     ServiceSiteGithub:"https://github.com/Aryan-Kumar-Thakur/ThakurServices",
