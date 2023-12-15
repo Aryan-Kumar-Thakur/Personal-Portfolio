@@ -13,7 +13,7 @@ const  ProjectBox = ({projectPhoto, projectName}) => {
     WeatherVaniGithub : "https://github.com/Aryan-Kumar-Thakur/Weather-Vani",
     WeatherVaniWebsite : "https://weathervani.onrender.com/",
 
-    ProgrammingCommunityDesc:"Developed a fully responsive Front End of a WebApp for the Programming Community Socity of our college using ReactJS , deployed on github pages.",
+    ProgrammingCommunityDesc:"Developed a fully responsive Front End of a WebApp for the Programming Community Socity of our college using ReactJS , deployed on Vercel.",
     ProgrammingCommunityGithub:"https://github.com/Aryan-Kumar-Thakur/Programming-Community-WebApp",
     ProgrammingCommunityWebsite:"https://programming-community.vercel.app/",
     
