@@ -6,7 +6,6 @@ import { FaGithub, FaLinkedin, FaPhoneAlt, FaTwitter } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { GrMail } from "react-icons/gr";
 import { SiLeetcode } from "react-icons/si"
-require('dotenv').config()
 
 
 
@@ -26,8 +25,8 @@ const Contact = () => {
     const submitHandler = async (e) => {
         e.preventDefault()
         emailjs
-            .sendForm('YOUR_SERVICE_KEY', 'YOUR_TEMPLATE_KEY', form.current, {
-                publicKey: 'YOUR_PUBLIC_KEY',
+            .sendForm(import.meta.env.VITE_REACT_API_YOUR_SERVICE_KEY, import.meta.env.VITE_REACT_API_YOUR_TEMPLATE_KEY, form.current, {
+                publicKey: import.meta.env.VITE_REACT_API_YOUR_PUBLIC_KEY,
             })
             .then(
                 (result) => {
@@ -38,7 +37,7 @@ const Contact = () => {
                 },
             );
         try {
-            const res = await fetch(process.env.DATABASE_URL, {
+            const res = await fetch(import.meta.env.VITE_REACT_API_DATABASE_URL, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -76,7 +75,6 @@ const Contact = () => {
             <div className='main-box'>
                 <div className='contact'>
                     <div className='form'>
-                        <h3>Send a Message</h3>
                         {/* form  */}
                         <form ref={form} onSubmit={submitHandler} method='POST'>
                             <div className="row50">
