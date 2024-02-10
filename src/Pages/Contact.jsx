@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
+import emailjs from '@emailjs/browser';
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FaGithub, FaLinkedin, FaPhoneAlt, FaTwitter } from "react-icons/fa";
@@ -17,17 +18,50 @@ const Contact = () => {
         mobile: "",
         message: "",
     })
+    const { fname, lname, email, mobile, message } = formdata;
 
-    const submitHandler = (e) => {
+    const form = useRef();
+
+    const submitHandler = async (e) => {
         e.preventDefault()
-        toast.success("Thanks For Contacting Us , We Will Get Back To You Soon 😀")
-        setformdata({
-            fname: "",
-            lname: "",
-            email: "",
-            mobile: "",
-            message: "",
-        })
+        emailjs
+            .sendForm('YOUR_SERVICE_KEY', 'YOUR_TEMPLATE_KEY', form.current, {
+                publicKey: 'YOUR_PUBLIC_KEY',
+            })
+            .then(
+                (result) => {
+                    console.log('SUCCESS!', result.text);
+                },
+                (error) => {
+                    console.log('FAILED...', error.text);
+                },
+            );
+        try {
+            const res = await fetch("https://portfolio-contacts-cc533-default-rtdb.firebaseio.com/Portfoliocontacts.json", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    fname,
+                    lname,
+                    email,
+                    mobile,
+                    message
+                })
+            })
+            toast.success("Thanks For Contacting Us , We Will Get Back To You Soon 😀")
+            setformdata({
+                fname: "",
+                lname: "",
+                email: "",
+                mobile: "",
+                message: "",
+            })
+        } catch (error) {
+            toast.error("Error! please fill all the details carefully")
+            console.log(error);
+        }
     }
 
     const inputHandler = (e) => {
@@ -43,7 +77,7 @@ const Contact = () => {
                     <div className='form'>
                         <h3>Send a Message</h3>
                         {/* form  */}
-                        <form onSubmit={submitHandler} >
+                        <form ref={form} onSubmit={submitHandler} method='POST'>
                             <div className="row50">
                                 <div className="inputbox">
                                     <span>First Name</span>
@@ -109,7 +143,7 @@ const Contact = () => {
                             036809980996!2d76.6108084741945!3d12.31330802897064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!
                             4f13.1!3m3!1m2!1s0x3baf7ae94fffffff%3A0x1ad797cbfc78d07a!2sJSS%20Science%20and%20
                             Technology%20University%2C%20Mysuru.!5e0!3m2!1sen!2sin!4v1701352732362!5m2!1sen!2sin"
-                                style={{ border: "0" }} allowfullscreen="" loading="lazy"
+                                style={{ border: "0" }} allowFullScreen="" loading="lazy"
                             ></iframe>
                         </div>
                     </div>
