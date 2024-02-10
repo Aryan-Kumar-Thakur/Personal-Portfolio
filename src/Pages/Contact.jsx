@@ -37,7 +37,7 @@ const Contact = () => {
                 },
             );
         try {
-            const res = await fetch("https://portfolio-contacts-cc533-default-rtdb.firebaseio.com/Portfoliocontacts.json", {
+            const res = await fetch(DATABASE_URL, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
