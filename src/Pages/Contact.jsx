@@ -6,6 +6,7 @@ import { FaGithub, FaLinkedin, FaPhoneAlt, FaTwitter } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { GrMail } from "react-icons/gr";
 import { SiLeetcode } from "react-icons/si"
+require('dotenv').config()
 
 
 
@@ -37,7 +38,7 @@ const Contact = () => {
                 },
             );
         try {
-            const res = await fetch(DATABASE_URL, {
+            const res = await fetch(process.env.DATABASE_URL, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
