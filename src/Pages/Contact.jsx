@@ -25,8 +25,8 @@ const Contact = () => {
     const submitHandler = async (e) => {
         e.preventDefault()
         emailjs
-            .sendForm(import.meta.env.VITE_REACT_API_YOUR_SERVICE_KEY, import.meta.env.VITE_REACT_API_YOUR_TEMPLATE_KEY, form.current, {
-                publicKey: import.meta.env.VITE_REACT_API_YOUR_PUBLIC_KEY,
+            .sendForm(import.meta.env.VITE_REACT_APP_YOUR_SERVICE_KEY, import.meta.env.VITE_REACT_APP_YOUR_TEMPLATE_KEY, form.current, {
+                publicKey: import.meta.env.VITE_REACT_APP_YOUR_PUBLIC_KEY,
             })
             .then(
                 (result) => {
@@ -37,7 +37,7 @@ const Contact = () => {
                 },
             );
         try {
-            const res = await fetch(import.meta.env.VITE_REACT_API_DATABASE_URL, {
+            const res = await fetch(import.meta.env.VITE_REACT_APP_DATABASE_URL, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
