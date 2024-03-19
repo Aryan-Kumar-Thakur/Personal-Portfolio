@@ -41,7 +41,7 @@ const Nav = () => {
     
     window.addEventListener("scroll", scrollHandler);
 
-    const url = "https://drive.google.com/file/d/1pqdWCcmouekn8085-CAFHyOmT0hJFYCU/view?usp=sharing"
+    const url = "https://drive.google.com/file/d/1kGyMb1KBby9yh45wdZu75s2rjiDqoy4g/view?usp=sharing"
 
   return (
     <nav className={navbarblur? 'Navbar blur':'Navbar'}> 
