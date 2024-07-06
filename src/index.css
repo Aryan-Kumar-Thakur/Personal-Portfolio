@@ -127,6 +127,7 @@ b {
 
 .NavbarLinks a:hover {
   color: #ffffff;
+  cursor: pointer;
 }
 
 .NavbarLinks a::after {
