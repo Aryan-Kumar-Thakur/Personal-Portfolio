@@ -13,7 +13,9 @@ export default defineConfig({
     
     'process.env.VITE_APP_YOUR_TEMPLATE_KEY':JSON.stringify(process.env.VITE_REACT_APP_YOUR_TEMPLATE_KEY),
 
-    'process.env.VITE_APP_YOUR_PUBLIC_KEY':JSON.stringify(process.env.VITE_REACT_APP_YOUR_PUBLIC_KEY)
+    'process.env.VITE_APP_YOUR_PUBLIC_KEY':JSON.stringify(process.env.VITE_REACT_APP_YOUR_PUBLIC_KEY),
+
+    'process.env.VITE_APP_RESUME_URL':JSON.stringify(process.env.VITE_REACT_APP_RESUME_URL)
     
     }
 })

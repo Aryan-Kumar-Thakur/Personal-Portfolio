@@ -41,7 +41,7 @@ const Nav = () => {
     
     window.addEventListener("scroll", scrollHandler);
 
-    const url = "https://drive.google.com/file/d/1kGyMb1KBby9yh45wdZu75s2rjiDqoy4g/view?usp=sharing"
+    const url = import.meta.env.VITE_REACT_APP_RESUME_URL
 
   return (
     <nav className={navbarblur? 'Navbar blur':'Navbar'}> 
